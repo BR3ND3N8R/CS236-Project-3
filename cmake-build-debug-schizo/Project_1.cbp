@@ -115,6 +115,12 @@
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/CommentAutomaton.h">
 			<Option target="Project_1"/>
 		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Database.cpp">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Database.h">
+			<Option target="Project_1"/>
+		</Unit>
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/DatalogProgram.cpp">
 			<Option target="Project_1"/>
 		</Unit>
@@ -125,6 +131,12 @@
 			<Option target="Project_1"/>
 		</Unit>
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/FactsAutomaton.h">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Header.cpp">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Header.h">
 			<Option target="Project_1"/>
 		</Unit>
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/IDAutomaton.cpp">
@@ -187,6 +199,12 @@
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/QueriesAutomaton.h">
 			<Option target="Project_1"/>
 		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Relation.cpp">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Relation.h">
+			<Option target="Project_1"/>
+		</Unit>
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Right_ParenAutomaton.cpp">
 			<Option target="Project_1"/>
 		</Unit>
@@ -221,6 +239,12 @@
 			<Option target="Project_1"/>
 		</Unit>
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Token.h">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Tuple.cpp">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="/users/guest/b/bn238/CS236/Project-3/Tuple.h">
 			<Option target="Project_1"/>
 		</Unit>
 		<Unit filename="/users/guest/b/bn238/CS236/Project-3/UndefinedAutomaton.cpp">

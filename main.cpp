@@ -41,8 +41,11 @@ int main(int argc, char** argv) {
     }
     else {
         cout << "Success!" << endl;
-        cout << parser->GetDatalogProgram()->ToString();
+        // cout << parser->GetDatalogProgram()->ToString();
     }
+
+
+
     // clean up memory
     delete lexer;
     delete parser;
