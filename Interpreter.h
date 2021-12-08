@@ -20,6 +20,11 @@ public:
 
     void Run();
 
+    void InterpretScheme(Predicate* predicate);
+    void InterpretFact(Predicate* predicate);
+
+    string DatabaseToString();
+
 };
 
 

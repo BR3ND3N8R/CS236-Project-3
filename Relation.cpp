@@ -76,4 +76,6 @@ string Relation::ToString() {
         }
         buffer << endl;
     }
+
+    return buffer.str();
 }

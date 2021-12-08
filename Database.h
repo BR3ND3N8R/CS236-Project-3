@@ -16,6 +16,11 @@ public:
 
     map<string, Relation*> relations;
 
+    void AddRelation(string name, Relation* relation);
+    void AddTupleToRelation(string name, Tuple tuple);
+
+    string TestToString();
+
 };
 
 

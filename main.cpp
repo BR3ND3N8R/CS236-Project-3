@@ -47,6 +47,9 @@ int main(int argc, char** argv) {
     cout << "INTERPRETER OUTPUT: --------------" << endl;
 
     Interpreter interpreter(parser->GetDatalogProgram());
+    interpreter.Run();
+
+    cout << interpreter.DatabaseToString() << endl;
 
 
     // clean up memory

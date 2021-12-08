@@ -12,3 +12,21 @@ Database::~Database() {
     }
 }
 
+void Database::AddRelation(string name, Relation* relation) {
+    relations.insert(pair<string, Relation*>(name, relation));
+}
+
+void Database::AddTupleToRelation(string name, Tuple tuple) {
+    relations.find(name)->second->AddTuple(tuple);
+}
+
+string Database::TestToString() {
+    stringstream buffer;
+    buffer << "Relations:" << endl;
+    for (auto iterator = relations.begin(); iterator != relations.end(); iterator++) {
+        buffer << iterator->first << ":" << endl;
+        buffer << iterator->second->ToString();
+    }
+
+    return buffer.str();
+}
