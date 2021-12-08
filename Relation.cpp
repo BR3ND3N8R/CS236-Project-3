@@ -4,43 +4,76 @@
 
 #include "Relation.h"
 
-Relation Relation::Select(unsigned int index, string value) {
-    Relation newRelation;
-    newRelation.name = this->name;
-    newRelation.header = this->header;
+Relation::Relation(string name, Header header) {
+    this->name = name;
+    this->header = header;
+}
+
+void Relation::AddTuple(Tuple tuple) {
+    tuples.insert(tuple);
+}
+
+Relation* Relation::Select(unsigned int index, string value) {
+    Relation* newRelation = new Relation(name, header);
 
     set<Tuple>::iterator tuplesIterator = tuples.begin();
     for (unsigned int i = 0; i < tuples.size(); i++) {
         Tuple tempTuple = *tuplesIterator;
         if (tempTuple.values[index] == value) {
-            newRelation.tuples.insert(tempTuple);
+            newRelation->AddTuple(tempTuple);
         }
         tuplesIterator++;
     }
 
     return newRelation;
 }
-Relation Relation::Select(unsigned int index1, unsigned int index2) {
-    Relation newRelation;
-    newRelation.name = this->name;
-    newRelation.header = this->header;
+Relation* Relation::Select(unsigned int index1, unsigned int index2) {
+    Relation* newRelation = new Relation(name, header);
 
     set<Tuple>::iterator tuplesIterator = tuples.begin();
     for (unsigned int i = 0; i < tuples.size(); i++) {
         Tuple tempTuple = *tuplesIterator;
         if (tempTuple.values[index1] == tempTuple.values[index2]) {
-            newRelation.tuples.insert(tempTuple);
+            newRelation->AddTuple(tempTuple);
         }
         tuplesIterator++;
     }
 
     return newRelation;
 }
-Relation Relation::Project(vector<unsigned int> indices) {
-    cout << "Relation::Project not yet implemented." << endl;
-    return *this;
+Relation* Relation::Project(vector<unsigned int> indices) {
+    Relation* newRelation = new Relation(name, header);
+
+    set<Tuple>::iterator tuplesIterator = tuples.begin();
+    for (unsigned int i = 0; i < tuples.size(); i++) {
+        Tuple newTuple;
+        Tuple tempTuple = *tuplesIterator;
+        for (unsigned int j = 0; j < indices.size(); j++) {
+            newTuple.values.push_back(tempTuple.values[indices[j]]);
+        }
+        newRelation->AddTuple(newTuple);
+        tuplesIterator++;
+    }
+
+    return newRelation;
 }
-Relation Relation::Rename(vector<string> attributes) {
-    cout << "Relation::Rename not yet implemented." << endl;
-    return *this;
+Relation* Relation::Rename(vector<string> attributes) {
+    Relation* newRelation = new Relation(name, header);
+    newRelation->tuples = tuples;
+    newRelation->header.attributes = attributes;
+
+    return newRelation;
+}
+
+string Relation::ToString() {
+    stringstream buffer;
+    for (Tuple tuple : tuples ) {
+        for (unsigned int i = 0; i < header.attributes.size(); i++) {
+            buffer << header.attributes[i] << "=" << tuple.values[i];
+            if (i != header.attributes.size()) {
+                buffer << ", ";
+            }
+        }
+        buffer << endl;
+    }
 }

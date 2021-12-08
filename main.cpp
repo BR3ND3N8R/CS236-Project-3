@@ -1,5 +1,6 @@
 #include "Lexer.h"
 #include "Parser.h"
+#include "Interpreter.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -36,14 +37,16 @@ int main(int argc, char** argv) {
     Parser* parser = new Parser(tokens);
     Token* parseResult = parser->Parse();
     if (parseResult != nullptr) {
-        cout << "Failure!" << endl;
-        cout << "  " << parseResult->ToString() << endl;
+        cerr << "Failure!" << endl;
+        cerr << "  " << parseResult->ToString() << endl;
+        return 3;
     }
-    else {
-        cout << "Success!" << endl;
-        // cout << parser->GetDatalogProgram()->ToString();
-    }
+    cout << "Success!" << endl;
+    cout << parser->GetDatalogProgram()->ToString();
 
+    cout << "INTERPRETER OUTPUT: --------------" << endl;
+
+    Interpreter interpreter(parser->GetDatalogProgram());
 
 
     // clean up memory

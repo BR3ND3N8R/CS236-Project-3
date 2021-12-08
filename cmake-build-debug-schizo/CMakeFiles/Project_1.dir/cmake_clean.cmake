@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_1.dir/FactsAutomaton.cpp.o"
   "CMakeFiles/Project_1.dir/Header.cpp.o"
   "CMakeFiles/Project_1.dir/IDAutomaton.cpp.o"
+  "CMakeFiles/Project_1.dir/Interpreter.cpp.o"
   "CMakeFiles/Project_1.dir/Left_ParenAutomaton.cpp.o"
   "CMakeFiles/Project_1.dir/Lexer.cpp.o"
   "CMakeFiles/Project_1.dir/MultiplyAutomaton.cpp.o"

@@ -10,10 +10,11 @@
 
 class Header {
 private:
-    vector<string> attributes;
 public:
     Header() = default;
     ~Header() = default;
+
+    vector<string> attributes;
 };
 
 

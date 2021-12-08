@@ -11,15 +11,19 @@
 DatalogProgram::~DatalogProgram() {
     for (unsigned int i = 0; i < schemes.size(); i++) {
         delete schemes[i];
+        schemes.clear();
     }
     for (unsigned int i = 0; i < facts.size(); i++) {
         delete facts[i];
+        facts.clear();
     }
     for (unsigned int i = 0; i < rules.size(); i++) {
         delete rules[i];
+        rules.clear();
     }
     for (unsigned int i = 0; i < queries.size(); i++) {
         delete queries[i];
+        queries.clear();
     }
 }
 
