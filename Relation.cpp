@@ -13,6 +13,10 @@ void Relation::AddTuple(Tuple tuple) {
     tuples.insert(tuple);
 }
 
+unsigned int Relation::Size() {
+    return tuples.size();
+}
+
 Relation* Relation::Select(unsigned int index, string value) {
     Relation* newRelation = new Relation(name, header);
 
@@ -65,17 +69,46 @@ Relation* Relation::Rename(vector<string> attributes) {
     return newRelation;
 }
 
-string Relation::ToString() {
+string Relation::TuplesToString() {
     stringstream buffer;
     for (Tuple tuple : tuples ) {
         for (unsigned int i = 0; i < header.attributes.size(); i++) {
+            if (i == 0) {
+                buffer << "  ";
+            }
             buffer << header.attributes[i] << "=" << tuple.values[i];
-            if (i != header.attributes.size()) {
+            if (i != (header.attributes.size() - 1)) {
                 buffer << ", ";
             }
+            else {
+                buffer << endl;
+            }
         }
-        buffer << endl;
     }
 
     return buffer.str();
+}
+
+string Relation::NameHeaderToString() {
+    stringstream buffer;
+    buffer << name << "(";
+    for (unsigned int i = 0; i < header.attributes.size(); i++) {
+        buffer << header.attributes[i];
+        if (i != (header.attributes.size() - 1)) {
+            buffer << ",";
+        }
+        else {
+            buffer << ")";
+        }
+    }
+
+    return buffer.str();
+}
+
+string Relation::GetName() {
+    return name;
+}
+
+Header Relation::GetHeader() {
+    return header;
 }

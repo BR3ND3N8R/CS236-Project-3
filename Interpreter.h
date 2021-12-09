@@ -12,18 +12,21 @@ class Interpreter {
 private:
     Database database;
     DatalogProgram* datalogProgram;
+    vector<string> evaluatedQueries;
+    vector<Relation*> queryEvaluatedRelations;
+
+    void InterpretScheme(Predicate* predicate);
+    void InterpretFact(Predicate* predicate);
 public:
     explicit Interpreter(DatalogProgram* datalogProgram);
-    ~Interpreter() = default;
+    ~Interpreter();
 
     Relation* EvaluatePredicate(const Predicate& predicate);
 
     void Run();
 
-    void InterpretScheme(Predicate* predicate);
-    void InterpretFact(Predicate* predicate);
-
     string DatabaseToString();
+    string EvaluatedQueriesToString();
 
 };
 

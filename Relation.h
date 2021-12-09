@@ -12,10 +12,11 @@
 
 class Relation {
 private:
-    set<Tuple> tuples;
     string name;
     Header header;
 public:
+    set<Tuple> tuples;
+
     Relation(string name, Header header);
     ~Relation() = default;
 
@@ -26,7 +27,11 @@ public:
     Relation* Project(vector<unsigned int> indices);
     Relation* Rename(vector<string> attributes);
 
-    string ToString();
+    string NameHeaderToString();
+    string TuplesToString();
+    unsigned int Size();
+    string GetName();
+    Header GetHeader();
 };
 
 

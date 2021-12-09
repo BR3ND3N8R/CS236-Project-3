@@ -18,6 +18,7 @@ public:
     string p;
 
     string ToString();
+    bool IsConstant();
 };
 
 

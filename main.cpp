@@ -41,15 +41,13 @@ int main(int argc, char** argv) {
         cerr << "  " << parseResult->ToString() << endl;
         return 3;
     }
-    cout << "Success!" << endl;
-    cout << parser->GetDatalogProgram()->ToString();
-
-    cout << "INTERPRETER OUTPUT: --------------" << endl;
+    /* cout << "Success!" << endl;
+    cout << parser->GetDatalogProgram()->ToString(); */
 
     Interpreter interpreter(parser->GetDatalogProgram());
     interpreter.Run();
 
-    cout << interpreter.DatabaseToString() << endl;
+    cout << interpreter.EvaluatedQueriesToString() << endl;
 
 
     // clean up memory

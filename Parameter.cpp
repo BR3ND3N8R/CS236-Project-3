@@ -15,3 +15,12 @@ Parameter::Parameter(string input) {
 string Parameter::ToString() {
     return p;
 }
+
+bool Parameter::IsConstant() {
+    if (p[0] == '\'') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}

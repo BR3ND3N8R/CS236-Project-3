@@ -20,6 +20,7 @@ public:
     void AddTupleToRelation(string name, Tuple tuple);
 
     string TestToString();
+    Relation* GetRelation(string name);
 
 };
 
